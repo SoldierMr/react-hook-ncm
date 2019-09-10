@@ -1,0 +1,135 @@
+#test {
+  width: 100px;
+}
+
+$primary: #d43c33;
+
+.border--solid--1px--gray {
+  position: relative;
+  &::after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transform-origin: left top;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5){
+  .border--solid--1px--gray{
+    &::after{
+      width: 150%;
+      height: 150%;
+      transform: scale(0.666666);
+    }
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio:2),(min-device-pixel-ratio:2){
+  .border--solid--1px--gray{
+    &::after{
+      width: 200%;
+      height: 200%;
+      transform: scale(0.5);
+    }
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio:3),(min-device-pixel-ratio:3){
+  .border--solid--1px--gray{
+    &::after{
+      width: 300%;
+      height: 300%;
+      transform: scale(0.3333333);
+    }
+  }
+}
+
+@mixin font--weight--black($transparent, $font-weight) {
+  color: rgba(0, 0, 0, $transparent);
+  font-weight: 400
+}
+
+span, li, ul, ol, th, td {
+  @include font--weight--black(0.9, 400);
+}
+
+.icon--king {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  width: 20px;
+  height: 20px;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCA2MCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjZTBhNjVhIiBkPSJNNjAgMEgwdjYwTDYwIDAiLz48ZyBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMjQuODQxIDEyLjMybDMuNTQ0IDQuOTYyLTExLjEgMTEuMS00Ljg1My0zLjQ2NiAyLjI3OS0uMjQ4IDIuMDU0LS4yMjQtLjI5MS0yLjA0Ni0uOTM1LTYuNTg0IDYuNjkyLjk1IDIuMDEuMjg2LjI1NS0yLjAxLjM0Ny0yLjcxOW0tMS4zNDItNS4zMmwtLjk4NiA3Ljc4Ny05LjMyOC0xLjMyNSAxLjMwOSA5LjIyLTcuNDk0LjgxNiAxMC40OTkgNy41TDMxIDE3LjUgMjMuNTAxIDcuMDAxeiIvPjxwYXRoIGQ9Ik0xMi42MjUgMTEuMjVjLjc1OCAwIDEuMzc1LjYxNyAxLjM3NSAxLjM3NWExLjM3NiAxLjM3NiAwIDAgMS0yLjc1IDBjMC0uNzU4LjYxNy0xLjM3NSAxLjM3NS0xLjM3NW0wLTJhMy4zNzQgMy4zNzQgMCAxIDAtLjAwMSA2Ljc0OSAzLjM3NCAzLjM3NCAwIDAgMCAuMDAxLTYuNzQ5eiIvPjwvZz48L3N2Zz4=) 0 no-repeat;
+  background-size: contain;
+}
+
+.icon--exclusive {
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  margin-right: 4px;
+  background-image: url(https://s3.music.126.net/mobile-new/img/index_icon_3x.png?49a82fe…=);
+  background-size: 166px 97px;
+}
+
+@keyframes animation--fadeOut {
+  0% {
+    opacity: 1
+  }
+  50% {
+    opacity: 0.5
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+@keyframes animation--fadeIn {
+  0% {
+    opacity: 0
+  }
+  50% {
+    opacity: 0.5
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+.disappear {
+  opacity: 0;
+  //display: none;
+}
+
+.removed {
+  visibility: hidden;
+}
+
+#sk {
+  position: fixed;
+  z-index: 100;
+  pointer-events: none
+}
+
+.sk-boddy {
+  transition: all 0.5s;
+  background: white;
+}
+
+.sk-headder {
+  transition: all 0.5s;
+}
+
+.sk-boddy-2 {
+  margin-top: 10.66667vw;
+}
+
+@import "reset";
+@import "home";
+@import "component";
+@import "song";

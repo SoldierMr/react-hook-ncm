@@ -1,0 +1,252 @@
+.header {
+  background-color: $primary;
+  height: 343px;
+  width: 375px;
+  position: relative;
+}
+
+.header--toggled--back {
+  animation: header-animation--fadeOut 200ms linear;
+}
+
+@keyframes header-animation--fadeOut {
+  0% {
+    height: 84px;
+  }
+  50% {
+    height: 172px;
+  }
+  100% {
+    height: 343px;
+  }
+}
+
+.header--toggled {
+  height: 84px;
+  position: fixed;
+  z-index: 6;
+  animation: header-animation--fadeIn 200ms linear;
+}
+
+@keyframes header-animation--fadeIn {
+  0% {
+    height: 343px;
+  }
+  50% {
+    height: 172px;
+  }
+  100% {
+    height: 84px;
+  }
+}
+
+.header-stuff {
+  height: 383px;
+  background: $primary;
+  animation: header-stuff-animation--fadeIn 250ms linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes header-stuff-animation--fadeIn {
+  0% {
+    height: 383px;
+  }
+  40% {
+    height: 212px;
+  }
+  80% {
+    height: 124px;
+    background: $primary;
+  }
+  100% {
+    height: 124px;
+    background: #fff;
+  }
+}
+
+.header__element--toggled {
+  opacity: 1;
+  animation: animation--fadeOut 200ms linear;
+  animation-fill-mode: forwards;
+}
+
+.header__element--toggled--back {
+  animation: animation--fadeIn 200ms linear;
+  animation-fill-mode: forwards;
+}
+
+.header-logo {
+  position: absolute;
+  top: 10.57%;
+  left: 50%;
+  width: 154px;
+  height: 27px;
+  margin-left: -77px;
+  img {
+    width: 100%
+  }
+}
+
+.header-logo--toggled {
+  width: 142px;
+  height: 25px;
+  img {
+    width: 100%
+  }
+}
+
+.header-content {
+  position: absolute;
+  top: 22.82%;
+  left: 0;
+  width: 100%;
+  height: 178px;
+  text-align: center;
+}
+
+.header-content--toggled {
+  height: 84px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  animation: animation--fadeIn 200ms linear;
+}
+
+.header-content__description--middle {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 200;
+  margin-top: 15px;
+}
+
+.header-content_songs--small {
+  display: flex;
+  justify-content: space-between;
+  margin: 11px 18px;
+}
+
+.header-button_download--white {
+  height: 45px;
+  line-height: 45px;
+  font-size: 17px;    position: absolute;
+  bottom: 7.93%;
+  left: 50%;
+  display: block;
+  width: 200px;
+  font-weight: 700;
+  margin-left: -100px;
+  background: #fff;
+  border-radius: 9999px;
+  color: #d43c33;
+  text-align: center;
+  transition: width .3s;
+}
+
+.header-button_download--white--toggled {
+  background-color: #fff;
+  border-radius: 37.5%/100%;
+  height: 36px;
+  width: 100px;
+  line-height: 36px;
+  font-size: 16px;
+  color: $primary;
+  text-align: center;
+}
+
+.body-content--hot-lists {
+  padding-top: 20px;
+}
+
+.body-content_songs--common {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+}
+
+.footer--hot_songs {
+  width: 375px;
+  height: 200px;
+  margin-top: 4px;
+  background-size: contain;
+  position: relative;
+  padding-top: 63.375px;
+  box-sizing: border-box;
+  background-image: url(//s3.music.126.net/mobile-new/img/recommand_bg_2x.png?d045faf…=);
+}
+
+@media (-webkit-min-device-pixel-ratio:3),(min-device-pixel-ratio:3){
+  .footer--hot_songs{
+    background-image: url(//s3.music.126.net/mobile-new/img/recommand_bg_3x.png?f3a9aaa…=);
+  }
+}
+
+.footer--hot_songs--open--app {
+  line-height: 38px;
+  border: 1px solid #d33a31;
+  border-radius: 38px;
+  font-size: 16px;
+  color: #d33a31;
+  margin: 15px 37px 5px;
+  text-align: center;
+}
+
+.body-content__board {
+  height: 1000px
+}
+
+.body-content__board--top {
+  height: 145.88px;
+  background: url(//s3.music.126.net/mobile-new/img/hot_music_bg_2x.jpg?f01a252…=) no-repeat;
+  background-size: contain;
+  position: relative;
+  &::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .2);
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio:3),(min-device-pixel-ratio:3){
+  .body-content__board--top{
+    background-image: url(//s3.music.126.net/mobile-new/img/hot_music_bg_3x.jpg?2bfefd3…=);
+  }
+}
+
+.body-content__board--top__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 145.88px;
+  padding-left: 20px;
+  div:nth-child(1) {
+    width: 142px;
+    height: 67px;
+    background: url(//s3.music.126.net/mobile-new/img/index_icon_2x.png?5207a28…=) no-repeat;
+    background-position: -24px -30px;
+    background-size: 166px 97px;
+    z-index: 2;
+  }
+  div:nth-child(2) {
+    margin-top: 10px;
+    color: hsla(0, 0%, 100%, .8);
+    font-size: 12px;
+    transform: scale(.91);
+    transform-origin: left top;
+    z-index: 2;
+  }
+}
+
+.body-content__board--footer {
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
