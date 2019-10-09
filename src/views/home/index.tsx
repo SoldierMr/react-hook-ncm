@@ -35,13 +35,13 @@ const Home: React.SFC<IHomeProps> = function (props) {
         ticking = false
     }
 
-    useEffect((): void => {
-        bodyRef.current.addEventListener("touchstart", () => {
-            window.addEventListener("scroll", onScroll)
-        })
-        bodyRef.current.addEventListener("touchend", () => {
-            window.addEventListener("scroll", onScroll)
-        })
+    useEffect(() => {
+        const handleScroll = () => window.addEventListener("scroll", onScroll)
+
+        bodyRef.current.addEventListener("touchstart", handleScroll)
+        bodyRef.current.addEventListener("touchend", handleScroll)
+        
+        return () => window.removeEventListener("scroll", handleScroll)
     }, [])
 
     return (

@@ -24,6 +24,7 @@ const useStoreRequest = () => {
                 setIsLoading(true)
 
                 try {
+                    // @ts-ignore
                     const result = await axios(filter)
                     dispatch.callback && dispatch.callback(result.data)
                 } catch (error) {

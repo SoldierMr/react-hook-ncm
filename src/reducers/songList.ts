@@ -1,8 +1,8 @@
 import {Action, IState, INITIAL_STATE} from '@actions/songList'
 
-const GET_HOT_LISTS :string = 'get_hot_lists'
-const GET_NEW_SONGS :string = 'get_new_songs'
-const GET_BOARD_SONGS :string = 'get_board_songs'
+const GET_HOT_LISTS = 'get_hot_lists'
+const GET_NEW_SONGS = 'get_new_songs'
+const GET_BOARD_SONGS = 'get_board_songs'
 
 export default function reducer(state: IState = INITIAL_STATE, action: Action) {
     switch (action.type) {
@@ -27,6 +27,7 @@ export default function reducer(state: IState = INITIAL_STATE, action: Action) {
                 boardSongs: {...state.boardSongs, [action.idx]: action.boardSongs},
             }
         }
+        default: return state === undefined ? [] : state
     }
 }
 

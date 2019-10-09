@@ -10,6 +10,7 @@ interface ISwitchBarClickCB {
 
 export default function SwitchBar(props: { titles: string[], click: ISwitchBarClickCB, current: string, toggled: boolean }) {
     const { titles, click, current, toggled } = props
+    
     return (
         <div className="component-bar__switch-container border--solid--1px--gray">
             {titles.map((v: string) => {

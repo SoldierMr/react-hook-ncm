@@ -23,7 +23,7 @@ export default function SongBar(props: { data: ISongBarProps, key: string, index
     return (
         <div className="component-bar__song-container">
             {type === SongBarType.I && (
-                <div className={"component-bar__song__rank" + (index < 3 ? "component-bar__song__rank--red" : "")}>
+                <div className={"component-bar__song__rank " + (index < 3 ? "component-bar__song__rank--red" : "")}>
                     {index < 9 ? ("0" + (index + 1)) : index + 1}
                 </div>
             )}

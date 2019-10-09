@@ -28,6 +28,7 @@ const useStateRequest: () => IUseStateReturn = () => {
                 setIsLoading(true)
 
                 try {
+                    // @ts-ignore
                     const result = await axios(filter)
                     setData(result.data)
                 } catch (error) {

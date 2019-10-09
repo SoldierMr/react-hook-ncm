@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node test.js",
     "build": "webpack --config build/webpack.base.js --mode production",
-    "dev": "webpack-dev-server --config build/webpack.dev.js --mode development",
+    "dev": "webpack-dev-server --config build/webpack.dev.js --mode development --open",
     "test:build": "webpack --config build/webpack.prod.js --mode production --env test",
     "prod:build": "webpack --config build/webpack.prod.js --mode production --env prod"
   },

@@ -29,7 +29,7 @@ const Body: React.SFC<IBodyProps> = (props) => {
         useCallback(
             (state: any) => ({
                 hotListLastUpdated: state.songList.lastUpdated_hotLists,
-                hotLists: state.songList.hosLists,
+                hotLists: state.songList.hotLists,
                 newListLastUpdated: state.songList.lastUpdated_newLists,
                 newLists: state.songList.newLists
             }),
@@ -41,7 +41,6 @@ const Body: React.SFC<IBodyProps> = (props) => {
         setCurrent(v)
         let pHeight = document.getElementsByClassName("header")[0].clientHeight
         let lineHeight = document.getElementsByClassName("component-bar__switch-container")[0].clientHeight
-
         let skBoddy2: any = document.getElementsByClassName("sk-boddy-2")[0]
         if (v === titles[1]) {
             let skBoddy: any = document.getElementsByClassName("sk-boddy")[0]
@@ -55,10 +54,11 @@ const Body: React.SFC<IBodyProps> = (props) => {
         if(window.pageYOffset > pHeight) {
             window.scrollTo(0, pHeight)
         }
+        
     }
 
     const getHotSongLists = (): void => {
-        if (hotLists.length && hotListLastUpdated && Date.now() - hotListLastUpdated < config.searchLimit * 60 * 1000) return
+        if (hotLists && hotLists.length && hotListLastUpdated && Date.now() - hotListLastUpdated < config.searchLimit * 60 * 1000) return
         doRequest(
             {
                 method: 'get',
@@ -89,10 +89,11 @@ const Body: React.SFC<IBodyProps> = (props) => {
     }
 
     useEffect((): void => {
+        console.log(current, 92)
         getContent(current)
     }, [current])
 
-    const ifLoaded = hotLists.length > 0 && newLists.length > 0
+    const ifLoaded = hotLists && hotLists.length > 0 && newLists.length > 0
     if (ifLoaded) {
         document.getElementsByClassName("sk-boddy")[0].classList.add("disappear")
     }

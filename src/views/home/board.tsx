@@ -52,7 +52,7 @@ export default function Board(props: { rh: any }) {
 
     useEffect(() => {
         getSongs(idx)
-    }, [])
+    }, [idx])
 
     const handleClick = (id: string | undefined): void => {
         rh.push(`/song?id=${id}`)
@@ -70,6 +70,7 @@ export default function Board(props: { rh: any }) {
                 <React.Fragment>
                     <div className="body-content__board--top">
                         <div className="body-content__board--top__title">
+                            <div />
                             <div>更新日期：07月31日</div>
                         </div>
                     </div>
